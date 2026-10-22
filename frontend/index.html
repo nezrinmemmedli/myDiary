@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnteraktiv Gündlük</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>myDiary</h1>
+        
+        <div class="toolbar">
+            <button id="addTextBtn">📝 Mətn Əlavə Et</button>
+            <button id="addStickerBtn">⭐ Stiker Əlavə Et</button>
+            <button id="addSongBtn">🎵 Spotify Mahnısı</button>
+            <button id="addVideoBtn">🎬 Video / Meme</button>
+        </div>
+
+        <div class="canvas-wrapper">
+            <canvas id="journalCanvas" width="420" height="595"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

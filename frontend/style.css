@@ -1,0 +1,103 @@
+/* Ümumi səhifənin arxa fonu və mərkəzləşdirilməsi */
+body {
+    background-color: #eef2f5; /* Çox açıq, göz yormayan mavi/boz fon */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    margin: 0;
+}
+
+/* Bütün elementləri ortada saxlayan ana qutu */
+.app-container {
+    text-align: center;
+    max-width: 800px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* --- YENİ: Alətlər Paneli (Toolbar) Dizaynı --- */
+.toolbar {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Yüngül kölgə */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Düymələr arasındakı məsafə */
+    flex-wrap: wrap; /* Ekrana sığmasa alt sətrə keçsin */
+}
+
+/* Düymələrin dizaynı */
+.toolbar button {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #495057;
+    transition: all 0.2s ease-in-out; /* Üzərinə gələndə yumşaq animasiya */
+}
+
+/* Siçanı düymənin üzərinə gətirdikdə (Hover effekti) */
+.toolbar button:hover {
+    background-color: #e2e6ea;
+    transform: translateY(-2px); /* Düyməni 2 piksel yuxarı qaldırır */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Vərəq (Canvas) Dizaynı --- */
+.canvas-wrapper {
+    position: relative; /* İçinə video/mahnı qoyanda koordinatları hesablamaq üçün vacibdir! */
+    display: inline-block;
+}
+
+#journalCanvas {
+    background-color: #ffffff; /* Ağ vərəq */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Dərin 3D kölgə */
+    border-radius: 2px;
+    border: 1px solid #d1d1d1;
+}
+/* Kətanın və onun üzərindəki obyektlərin ən öndə olmasını təmin edirik */
+.canvas-container {
+    z-index: 10 !important; 
+}
+
+/* Spotify və Video iframe-lərini kətanın həmən altında, lakin hələ də görünən edirik */
+iframe {
+    z-index: 20;
+    /* Sürükləyə bilmək üçün bu pəncərələrin kənarlarına boşluq verəcəyik */
+}
+/* Pleyeri və tutqacı birləşdirən ana çərçivə */
+.widget-container {
+    position: absolute;
+    z-index: 20;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    background-color: #fff;
+}
+
+/* Sürükləmək üçün yuxarıdakı tutqac zolağı */
+.drag-handle {
+    background-color: #e2e6ea;
+    height: 20px;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #666;
+    user-select: none;
+}
+
+/* Tutqacdan yapışanda siçanın forması dəyişsin */
+.drag-handle:active {
+    cursor: grabbing;
+}
