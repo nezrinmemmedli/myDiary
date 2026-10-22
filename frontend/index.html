@@ -7,15 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="app-container">
+    <!-- Qeydiyyat və Giriş Ekranı -->
+    <div id="auth-screen" class="auth-container">
+        <div class="auth-box">
+            <h2>Gündlüyə Giriş</h2>
+            <input type="text" id="username" placeholder="İstifadəçi adı">
+            <input type="password" id="password" placeholder="Şifrə">
+            
+            <div class="auth-buttons">
+                <button id="loginBtn">Daxil ol</button>
+                <button id="registerBtn" class="secondary-btn">Qeydiyyatdan keç</button>
+            </div>
+            <p id="authMessage"></p>
+        </div>
+    </div>
+    <div class="app-container" style="display: none;">
         <h1>myDiary</h1>
         
-        <div class="toolbar">
-            <button id="addTextBtn">📝 Mətn Əlavə Et</button>
-            <button id="addStickerBtn">⭐ Stiker Əlavə Et</button>
-            <button id="addSongBtn">🎵 Spotify Mahnısı</button>
-            <button id="addVideoBtn">🎬 Video / Meme</button>
-        </div>
+       
+        <!-- Alətlər Paneli (Toolbar) -->
+    <div class="toolbar">
+        <button id="addTextBtn">📝 Mətn Əlavə Et</button>
+        <button id="addStickerBtn">⭐ Stiker Əlavə Et</button>
+        <button id="addSongBtn">🎵 Spotify Mahnısı</button>
+        <button id="addVideoBtn">🎬 Video / Meme</button>
+        <!-- YENİ DÜYMƏ -->
+        <button id="saveBtn" style="background-color: #28a745; color: white;">💾 Yadda saxla</button>
+    </div>
 
         <div class="canvas-wrapper">
             <canvas id="journalCanvas" width="420" height="595"></canvas>
